@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Before the Year Ends</title>
+  <style>
+    body { 
+      font-family: serif; 
+      text-align: center; 
+      padding: 40px; 
+      background: #faf9f6;
+    }
+    input, button {
+      padding: 8px;
+      margin: 6px;
+      font-family: serif;
+    }
+    #letter { 
+      display: none; 
+      margin-top: 30px; 
+      white-space: pre-line; 
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Before the Year Ends</h2>
+<p><em> A letter for you! </em> </p>
+
+<input id="name" placeholder="Your name"><br>
+<input id="password" type="password" placeholder="Password"><br>
+<button onclick="openLetter()">Open Letter</button>
+
+<div id="letter"></div>
+
+<script>
+const letters = {
+  "Shruti": {
+    password: "kareena",
+    text: "Dear Shruti,\n\nIf it wouldn't have been your text on that TII song group, we wouldn't have this group. So a big thank you for bringing such beautiful people together.\nI'm a rare \"didi\" listener and when you called me that for the first time, it felt very cute.\nGod bless, have a great academic year ahead. Here's to sharing many more music and celebrating art.\n\nWith love,\nLaxmi didi"
+  },
+
+  "Vidhi": {
+    password: "arjun",
+    text: "Dear Vidhi🤍,\n\nYou know I love using these white heart emojis 🤍 — they feel serene and kind, just like you.\nTotally mesmerized by how beautifully you captured the soul of ZNMD, Javed Akhtar’s poems.\nAll in all, it was lovely getting to know you. Manifesting a well-placed job soon for both of us!Here’s to sharing more music and art.\n\nWith love,\nLaxmi🤍"
+  },
+
+  "Shobhita": {
+    password: "zoe",
+    text: "Dear Shobhita,\n\n Please let Zoe know I said hii! She’s the cutest🫶 and since you give such sunflower-person vibes, here’s one for you🌻\nThis year felt warmer getting to know you, Lana girl! Here’s to sharing more music and life stories.\n\nWith love,\nYour Spotify-issues saviour haha"
+  },
+
+  "Sameer": {
+    password: "crawford",
+    text: "Dear Sameer, kuch sher bhejiye!\n\nKuch log wise hote hain, kuch logon ki baatein wisdom se bhari hoti hain. Aap unmein se ho jo dono hi khoobiyon ke saath aate ho. \n Just really grateful this year gave me the chance to know you. Here's to sharing many more art and experiences. \n\nWith gratitude,\nLaxmi"
+  },
+
+  "Utkarsh": {
+    password: "metro",
+    text: "Hi! weird password, right? \n\nDear Utkarsh ji, you know there are two kinds of music, a kind that we want to tell everyone about as it's amazing and another kind that we want to hide from the world listening in solitary cause the world will ruin it AND YOU KNOW EVERY KIND!!! V cool person ho aap. Here's to sharing many more music and stickers \n\n Misal with pav,\nLaxmi"
+  },
+
+  "Ashish": {
+    password: "bhopal",
+    text: "Dear bhaiya, aawaz sune bhot din hogye. \n\n To come across a travel guide who's a great singer too, was this year's greatest achievement 💪 Here's to sharing more voice notes and itineraries. Hope to learn more from you!\n\nWith immense respect,\n Manali ki maggi mid thi"
+  },
+
+  "Vivek": {
+    password: "gopi",
+    text: "Dearest Vivek Bhaiya,\n\n You're the backbone of this group! Thank you for all the well wishes and positivity you’ve shared throughout the year ✨ It has been a pleasure knowing you. Keep your phone protected taaki aapko group leave na karna pare! Here's to sharing many more refreshing songs and poems\n\nWith love for litti chokha,\nLaxmiii"
+  },
+
+  "Astha": {
+    password: "kanha",
+    text: "Dear Astha, \n\nBhot sochne ke baad maine password bhagwan par chor diya🙏 \nHope you're doing well. Just wanted to say it was really nice meeting you this year, loved your way of storytelling, please never stop. Here's to sharing more compatible songs and good conversations🫶 \n\nWith love,\n Definitely not for Pritam😭"
+  }
+};
+
+function openLetter() {
+  const name = document.getElementById("name").value.trim();
+  const pass = document.getElementById("password").value.trim();
+
+  if (letters[name] && letters[name].password === pass) {
+    document.getElementById("letter").style.display = "block";
+    document.getElementById("letter").innerText = letters[name].text;
+  } else {
+    alert("Wrong name or password");
+  }
+}
+</script>
+</body>
+  </html>
