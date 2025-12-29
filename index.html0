@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Before the Year Ends</title>
+  <style>
+    body {
+      font-family: serif;
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+      min-height: 100vh;
+      margin: 0;
+    }
+    input, button {
+      padding: 8px;
+      margin: 6px;
+      font-family: serif;
+    }
+    #letter {
+      display: none;
+      margin-top: 30px;
+      white-space: pre-line;
+      background: rgba(255, 255, 255, 0.85); /* soft translucent paper effect */
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Before the Year Ends</h2>
+<p><em>Lux did something.</em></p>
+
+<input id="name" placeholder="Your name"><br>
+<input id="password" type="password" placeholder="Password"><br>
+<button onclick="openLetter()">Open Letter</button>
+
+<div id="letter"></div>
+<script>
+const letters = {
+  "Faiza": {
+    password: "attendance",
+    text: "Dear Faiza,\n\nHope you're doing well. This is me saying thank you for this year. Here's to making more attendance and less kalesh🙏 Hope the coming year brings peace😮‍💨 \n\nWith love,\nrunning from Demogorgons
+  }
+};
+
+function openLetter() {
+  const name = document.getElementById("name").value.trim();
+  const pass = document.getElementById("password").value.trim();
+
+  if (letters[name] && letters[name].password === pass) {
+    document.getElementById("letter").style.display = "block";
+    document.getElementById("letter").innerText = letters[name].text;
+  } else {
+    alert("Wrong name or password");
+  }
+}
+</script>
+</body>
+  </html>
